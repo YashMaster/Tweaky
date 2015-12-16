@@ -1,12 +1,7 @@
 #pragma once
 #include "stdafx.h"
-#include "Keyboard.h"
 #include "C.h"
-
-//For COM Method
-#include <mmdeviceapi.h>
-#include <endpointvolume.h> 
-
+#include "Keyboard.h"
 
 class VolumeHandler
 {

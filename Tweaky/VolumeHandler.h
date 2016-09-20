@@ -82,13 +82,20 @@ public:
 		else if (delta < -MaxVolume)
 			delta = -MaxVolume;
 
+		int numPresses = abs(delta) / 2;
+		PRINT_INT(numPresses);
+
 		//If it's a positive delta... increase the volume
 		if (delta > 0)
-			SendShortcut(L"{VK_VOLUME_UP}");
+			for (int i = 0; i < numPresses; i++)
+				SendShortcut(L"{VK_VOLUME_UP}");
 		else if (delta < 0) 
-			SendShortcut(L"{VK_VOLUME_DOWN}");
+			for (int i = 0; i < numPresses; i++)
+				SendShortcut(L"{VK_VOLUME_DOWN}");
 		else if (delta == 0) //Just show the slider in this case I guess...
 			VolumeHandler::ShowSlider();
+
+		
 
 		return true;
 	}
